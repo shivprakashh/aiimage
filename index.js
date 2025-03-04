@@ -8,6 +8,7 @@ app.set('view engine',"ejs")
 app.use(express.static("public"))
 
 app.get('/',(req,resp)=>{
+    console.log("entering into home rout",req.get("user-agent"))
     resp.render("home")
 })
 app.get("/google",(req,resp)=>{
@@ -22,7 +23,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 /////////////////////upload/////////////////////
 app.post('/upload',upload.array("images",10),async (req,resp)=>{
-    console.log(req.files)
+    console.log("entering into upload")
     if (!req.files || req.files.length === 0) {
         return resp.status(400).json({ error: "No files uploaded" });
     }
@@ -36,9 +37,9 @@ try{
    image.resize(300,Jimp.AUTO).quality(80).greyscale().write(output);
    images.push(`images/edited-${filename}`);
    
-console.log(filename,'ths isfile name to edit')
+
 resp.status(200).json(images)
-console.log(req.body,"this is response")
+
 
 }catch(error){
     console.log(error ,"error in editing the file upload api")
