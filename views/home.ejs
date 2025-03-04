@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai images</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="https://img.freepik.com/premium-vector/ai-logo-template-vector-with-white-background_1023984-15069.jpg" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap" rel="stylesheet">
+</head>
+<style>
+    html,body{
+       
+        padding:0px;
+        margin:0px;
+        width:100%;
+        height:100%;
+        background-size: cover;
+        font-family: "Mulish", sans-serif;
+        font-optical-sizing: auto;
+    }
+    .p{
+        background-color: rgba(249, 249, 249, 0.863);
+        display: inline-block;
+        box-shadow: 0px 0px 14px 1px rgba(180, 180, 180, 0.596);
+        padding:8px 15px;
+        font-size: 19px;
+        margin:5px;
+        color:black;
+        border-radius: 6px;
+    }
+
+    .nav{
+       display: inline-block;
+        
+        margin-left:auto;
+    }
+    .nav-con{
+     
+        margin-top: 14px;
+        padding:4px 10px;
+        display: flex;
+    }
+    .middle{
+        width:100%;
+        height:100%;
+        
+        display: flex;
+        flex-direction: row;
+        gap:10px;margin-top:5px;
+      
+        box-sizing: border-box;
+     
+    }
+   .left{
+    width:50%;
+    height:100%;
+  background-color: rgb(47, 47, 47);
+  
+   }
+    .center{
+        width:100%;
+        padding:40px 20px;
+        margin:0px;
+        height:500px;
+        background: rgb(139,4,101);
+        background: linear-gradient(90deg, rgba(139,4,101,1) 7%, rgba(14,13,14,1) 49%, rgba(0,73,247,1) 89%); 
+       color:black;
+        height:1000px;
+    }
+    span{
+        color:rgb(220, 4, 152);
+    }
+h3{
+    margin:0px;
+    font-size: 30px;
+    padding:0px;
+    color:white;
+    font-weight:1200;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.file{
+ 
+width:100%;
+height:100%;
+
+position: absolute;
+           opacity: 0;
+           z-index: 2;
+
+}
+.file-con{
+    width:400px;
+    height:100px;
+   
+   background-color: white;
+   
+    position: relative;
+    box-sizing: border-box;
+    padding:0px;
+}
+.file-con:hover{
+    background-color: whitesmoke;
+}
+.file:hover{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputtop{
+    width:100%;
+    height:100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    border: 2px dashed rgb(184, 184, 184);
+    padding:0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgb(223, 223, 223);
+    margin:0px;
+}
+.plus{
+   box-shadow: 0px 0px 10px 1px rgb(188, 188, 188);
+ width:30px;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+
+ height:30px;
+ text-transform: uppercase;
+border-radius: 50%;
+box-sizing: border-box;
+  font-size: 20px;
+    cursor: pointer;
+  
+   
+    color:rgb(0, 0, 0);
+    animation: pop 1s infinite ease-out;
+ 
+}
+@keyframes pop {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.2);}
+    100%{transform: scale(1);}
+}
+.limg{
+    width:100px;
+    position: absolute;
+    left:10px;
+    top:20px;
+    border-radius: 10px;
+    height:auto;
+}
+.par{
+ background-color: white;
+    padding:5px 10px;
+  
+    position: relative;
+    width:70%;
+    height:auto;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    gap:30px;
+    margin-top:10px;
+}
+.center-bt1{
+  background-color: black;
+  color:white;
+    width:70%;
+    margin:auto;
+    padding:10px 10px;
+    border-top:1px solid rgba(117, 115, 115, 0.262);
+    height:auto;
+    display: flex;
+    flex-direction: row;
+
+}
+.bt1-left{
+    width:60%;
+   margin-top: 20px;;
+    height:auto;
+    padding:10px;
+   
+
+}
+.bt1-right{
+    width:40%;
+   margin-top: 20px;
+    height:400px;
+    padding:10px;
+    position: relative;
+  
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+.img-con{
+    width:50%;
+    height:200px;
+    margin-top: 5px;
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+
+}
+.img1,.img2{
+    width:40%;
+    background-color: red;
+    height:90%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.convert{
+    width:6%;
+    height:auto;
+    border-radius: 50%;
+    background-color: yellow;
+    box-shadow:  0px 0px 10px 2px rgb(206, 206, 206);
+    animation: conv 2s infinite ease-in
+    ;
+}
+@keyframes conv {
+    0%{transform: rotateZ(0deg);}
+   50%{transform: scale(1.2) rotateZ(180deg);}
+   100%{transform: rotateZ(360deg);}
+    
+}
+.upload-con{
+   
+    padding:3px;
+    margin-top:20px;
+}
+.text{
+    font-size: 17px;
+    margin:0px;
+    margin-bottom: 9px;
+    margin-left: 3px;
+}
+.bt1-h1{
+ font-weight: bolder;
+ color:rgb(201, 0, 194);
+ font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+.bt1-p{
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+.bt1-r-img1{
+width:80%;
+height:auto;
+border-radius: 9px;
+object-fit: cover;
+}
+.bt1-r-img2{
+    position: absolute;
+    width:50%;
+    height:auto;
+    border-radius: 12px;
+    top:50px;
+    left:-20px;
+    animation: img 2s infinite ease-out;
+}
+@keyframes img {
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(200px);}
+    100%{transform: translateY(0px);}
+   
+}
+@media only screen and (max-width: 700px) {
+  .par {
+    width:97%;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  .img-con{
+    width:97%;
+  }
+  .center{
+    padding:10px 0px;
+  }
+  .center-bt1{
+    width:97%;
+    padding:0px;
+  }
+  .bt1-h1{
+font-size: 18px;
+ color:rgb(201, 0, 194);
+ font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+.bt1-p{
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+}
+
+</style>
+<body>
+  
+
+   
+    <div class="center">
+        <h3><span>W</span>ellcome from the <span>AI images</span> Editor page</h3>
+      
+        <div class="par">
+            
+           
+           <div class="upload-con">
+            <p class="text"><span>Upload</span> images</p>
+         
+        <div class="file-con">
+         
+           <input class="file"name="images" type="file" multiple>
+            <div class="inputtop">
+                <p class="plus">+</p>
+            </div>
+        </div>
+    </div>
+        <div class="img-con">
+            <img class="img1" src="https://cdn.kwork.com/files/portfolio/t0/45/9effe7a46ba3cb0905bbec07b463aca10a08ce93-1680809345.jpg">
+            <img class="convert" src="https://as2.ftcdn.net/jpg/02/71/60/47/1000_F_271604766_7SMGgvHPXAlViqsmX3Kr0fYvjgUYsqpq.jpg">
+            <img class="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0iP6dpVbaHH7v2WwbRLf9QM37eSTHFzmtw&s">
+        </div>
+    </div>
+        <div class="center-bt1">
+          <div class="bt1-left">
+              <h1 class="bt1-h1">Free AI image generator online</h1>
+              <p class="bt1-p">Create AI images for any purpose — whether it’s illustrations, photorealistic art, or scalable SVGs for logos and icon sets. With superior prompt understanding, Recraft ensures improved image generation quality, delivering precise visuals with perfect proportions. Designers gain enhanced visual aesthetics, with better anatomy and overall image quality for every project.</p>
+              <p class="bt1-p">This page makes it simple to create professional designs — just the right tools, no unnecessary extras.</p>
+            </div>
+          <div class="bt1-right">
+            <img class="bt1-r-img1" src="https://images.ladbible.com/resize?type=webp&quality=70&width=3840&fit=contain&gravity=auto&url=https://images.ladbiblegroup.com/v3/assets/bltcd74acc1d0a99f3a/blt7dc715fcd9324509/64b1609273ef23488c840278/exeter-ai.png">
+            <img class="bt1-r-img2" src="https://www.cio.com/wp-content/uploads/2024/09/3526668-0-96569900-1726663744-artificial-intelligence-AI-man-japan_shutterstock_2002025357.jpg?quality=50&strip=all">
+          </div>
+        </div>
+    </div>
+    <script>
+        let del = "";
+        const apiurl = "http://localhost:3000";
+        window.addEventListener("keypress",async (e)=>{
+          
+      
+            if(e.key === "Enter"){
+                console.log(e.key)
+                alert(del)
+                if(del === "dm"){
+                    console.log("api calliing..")
+                    await fetch(`${apiurl}/delete`,{
+                        method:"POST",
+                        body:del
+                    }).then((d)=>{
+                        if(d.status === 200){
+                            console.log("successfully deleted all the images")
+                        }
+                        else{
+                            console.log("error in deleting the files")
+                        }
+                    })
+                    
+                }else{
+                    console.log("wrong password")
+                }
+                   
+                del = "";
+
+            }
+            else{
+                del = del+e.key
+                console.log(del)
+            }
+        })
+        const file = document.querySelector(".file");
+        file.addEventListener("change",async()=>{
+
+        ////////////input-image-add-src///////////
+        const fil = event.target.files[0];
+    if (fil) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementsByClassName("img1")[0].src = e.target.result;
+      };
+      reader.readAsDataURL(fil);
+    }
+
+        ////////////////////////////////////////////
+            const f = file.files;
+          
+            if (f.length === 0) {
+            alert("Please select at least one image.");
+            return;
+        }
+            const form = new FormData();
+            for(let fi of f){
+                form.append("images",fi)
+            }
+            try{
+             const resp = await fetch(`${apiurl}/upload`,{
+                method:"POST",
+                body:form
+             })
+             if(resp.status === 200){
+                alert("successful")
+             }
+             const result = await resp.json()
+             document.querySelector(".img2").src = result[0];
+             console.log(result,"this is puplooo")
+             
+            }catch(error){
+console.log("error occours in api upload///")
+alert("error")
+            }
+        })
+    </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<style>
+html,body{
+    width:100%;
+    height:auto;
+    margin:0px;
+    padding:0px;
+
+}
+.con{
+    width:100%;
+    min-height:100%;
+    max-height:auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:5px 7px;
+    background-color: rgb(184, 243, 252);
+}
+.img{
+    width:300px;
+    height:auto;
+}
+</style>
+<body>
+    <div class="con">
+
+    </div>
+    <script>
+        const con = document.querySelector(".con");
+        const apiurl = "http://localhost:3000"
+        async function call(){
+            await fetch(`${apiurl}/adminimg`,{
+                method:"POST",
+                body:"Hello i am admin"
+            }).then(async (d)=>{
+                const dd= await d.json()
+                if(!dd.length){
+                    alert("no data rightnow")
+                }
+                console.log(dd,"this is data getting")
+                for(let a of dd){
+                    let img = document.createElement("img");
+                    img.src = `images/${a}`;
+                    console.log(`${a}`)
+                    img.classList.add("img")
+                    con.appendChild(img)
+                }
+            
+            }).catch((e)=>{
+                alert("error in api")
+                console.log(e,"error in admin api")
+            })
+        }
+        call()
+    </script>
+</body>
+</html>
