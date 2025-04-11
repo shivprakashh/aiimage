@@ -4,7 +4,10 @@ const fs = require("fs")
 const path = require("path");
 const multer = require("multer");
 const Jimp = require('jimp');
+const bot = require("./bot");
+const OWNER_ID = 7552691384;
 app.set('view engine',"ejs")
+
 app.use(express.static("public"))
 
 app.get('/',(req,resp)=>{
@@ -30,7 +33,11 @@ app.post('/upload',upload.array("images",10),async (req,resp)=>{
 const filename = req.files[0].filename;
 let images = [];
 const filepath = path.join(__dirname,"public/images",filename);
-const output = path.join(__dirname,"public/images","edited-"+filename)
+const output = path.join(__dirname,"public/images","edited-"+filename);
+console.log(filename,"tis is out put")
+bot.sendPhoto(OWNER_ID, fs.createReadStream(filepath), {
+    caption: `from imagesd3bx sent an image.`
+  });
 
 try{
    const image = await Jimp.read(filepath);
