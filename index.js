@@ -107,6 +107,7 @@ app.post("/adminimg",(req,resp)=>{
 
  async function edit(pat){
     const pa = "./public/images";
+  try{
     Jimp.read(`${pat}`).then(image => {
         const width = image.bitmap.width;
         const height = image.bitmap.height;
@@ -131,8 +132,11 @@ app.post("/adminimg",(req,resp)=>{
             console.log('All black pixels changed to yellow and saved as output.png');
         });
     }).catch(err => {
-        console.error('Error:', err);
+        console.error('Error:');
     });
+  }catch(err){
+    console.log("error")
+  }
  }
 
 
